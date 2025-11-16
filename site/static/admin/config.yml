@@ -104,3 +104,33 @@ collections: # A list of collections the CMS should be able to edit
                 name: images
                 widget: list
                 field: { label: Image, name: image, widget: image }
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      # ---------- NAVIGATION ----------
+      - label: "Navigation Menu"
+        name: "navigation"
+        file: "site/data/navigation.yml"
+        fields:
+          - label: "Menu Items"
+            name: "items"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: "Name", name: "name", widget: "string", default: "Home" }
+              - { label: "Link", name: "link", widget: "string", default: "/" }
+              - { label: "Open in New Tab?", name: "new_tab", widget: "boolean", default: false }
+
+      # ---------- HEADER ----------
+      - label: "Header"
+        name: "header"
+        file: "site/data/header.yml"
+        fields:
+          - { label: "Logo Image (recommended 300×80)", name: "logo", widget: "image", required: false }
+          - { label: "Header Banner (full-width)", name: "banner", widget: "image", required: false }
+          - { label: "Site Title (if no logo)", name: "title", widget: "string", default: "ByteCascade" }
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
