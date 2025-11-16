@@ -1,0 +1,19 @@
+items:
+  - name: Home
+    link: /
+  - name: Samsung
+    link: /samsung
+  - name: Apple
+    link: /apple
+  - name: Android
+    link: /android
+  - name: AI
+    link: /ai
+  - name: Reviews
+    link: /reviews
+  - name: Games
+    link: /games
+  - name: Technology
+    link: /technology
+  - name: Privacy Policy
+    link: /privacy-policy
