@@ -1,4 +1,25 @@
 items:
-  - name: Dack
+  - new_tab: false
+    name: "News "
+    link: /
+  - name: "Samsung "
     link: /
     new_tab: false
+  - new_tab: false
+    name: "Apple "
+    link: /
+  - new_tab: false
+    name: "Android "
+    link: /
+  - new_tab: false
+    name: "Games "
+    link: /
+  - new_tab: false
+    name: Ai
+    link: /
+  - new_tab: false
+    name: "Tech Gadget "
+    link: /
+  - new_tab: false
+    name: "Reviews "
+    link: /
