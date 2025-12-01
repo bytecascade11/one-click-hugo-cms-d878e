@@ -1,5 +1,4 @@
 {
   "buildCommand": "hugo --gc --minify",
-  "outputDirectory": "public",
-  "installCommand": "npm install"  // Optional, ignores if no package.json
+  "outputDirectory": "public"
 }
