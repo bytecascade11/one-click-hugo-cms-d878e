@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.136.5"
+    }
+  },
+  "outputDirectory": "public"
+}
