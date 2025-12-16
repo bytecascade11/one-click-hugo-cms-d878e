@@ -1,4 +1,41 @@
-copyright: $$\text{© 2025 ReviByte Technology Reviews. All Rights Reserved.}$$
-links:
-  - name: Hhhhhhh
-    url: /
+title: "ByteCascade"  # This is the big title above the blurb
+blurb: "Your go-to source for honest tech reviews, gadgets, and byte-sized insights."
+
+# First column: ReviByte links
+revibyte_links:
+  - title: "Home"
+    url: "/"
+  - title: "About Us"
+    url: "/about"
+  - title: "Privacy Policy"
+    url: "/privacy"
+  - title: "Terms and Conditions"
+    url: "/terms"
+  - title: "Disclaimer"
+    url: "/disclaimer"
+  - title: "Contact"
+    url: "/contact"
+
+# Second column: Find out more
+more_links:
+  - title: "Latest Reviews"
+    url: "/products"
+  - title: "Join WhatsApp Channel"
+    url: "https://whatsapp.com/channel/0029VbBCXzRKAwEdcyip8841"
+  - title: "Work with us"
+    url: "/contact"
+
+# Social media
+social:
+  - link: "https://www.facebook.com/profile.php?id=61575510347312"
+    svg: "icons-facebook"
+    alt: "ReviByte on Facebook"
+  - link: "https://x.com/ByteCascade1"
+    svg: "icons-twitter"
+    alt: "ReviByte on X"
+  - link: "https://www.youtube.com/@ByteCascade1"
+    svg: "icons-vimeo"  # Change to icons-youtube if your theme has it
+    alt: "ReviByte on YouTube"
+  - link: "https://pin.it/3wPZoxiRO"
+    svg: "icons-instagram"  # Change to icons-pinterest if available
+    alt: "ReviByte on Pinterest"
