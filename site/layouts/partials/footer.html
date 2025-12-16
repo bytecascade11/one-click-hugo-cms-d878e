@@ -1,13 +1,11 @@
 <div class="mw7 center pt3">
 
 	<div class="measure-narrow center mb4">
-
-		<img src="/img/logo.svg" alt="ReviByte logo" class="db w4 center mb4 br0">
+		<img src="/img/logo.svg" alt="ByteCascade logo" class="db w4 center mb4 br0">
 		<p class="f3 lh-title light-gray b tc mb2">{{ .Site.Data.footer.title }}</p>
 		<p>{{ .Site.Data.footer.blurb }}</p>
 
 		{{ partial "newsletter-form" . }}
-
 	</div>
 
 	<div class="flex-ns justify-between">
@@ -15,31 +13,27 @@
 		<div>
 			<h3 class="f4 b lh-title mb1 primary">ReviByte</h3>
 			<ul class="mb3">
-				<li><a href="/" class="link">Home</a></li>
-				<li><a href="/about" class="link">About Us</a></li>
-				<li><a href="/privacy" class="link">Privacy Policy</a></li>
-				<li><a href="/terms" class="link">Terms and Conditions</a></li>
-				<li><a href="/disclaimer" class="link">Disclaimer</a></li>
-				<li><a href="/contact" class="link">Contact</a></li>
+				{{ range .Site.Data.footer.revibyte_links }}
+				<li><a href="{{ .url }}" class="link">{{ .title }}</a></li>
+				{{ end }}
 			</ul>
 		</div>
 
 		<div>
 			<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
 			<ul class="mb3">
-				<li><a href="/products" class="link">Latest Reviews</a></li>
-				<li><a href="https://whatsapp.com/channel/0029VbBCXzRKAwEdcyip8841" class="link">Join WhatsApp Channel</a></li>
-				<li><a href="/contact" class="link">Work with us</a></li>
+				{{ range .Site.Data.footer.more_links }}
+				<li><a href="{{ .url }}" class="link">{{ .title }}</a></li>
+				{{ end }}
 			</ul>
 		</div>
 
 		<div>
 			<h3 class="f4 b lh-title mb2 primary">Social media</h3>
 			<ul class="mhn2">
-				{{ partial "social-icon" (dict "link" "https://www.facebook.com/profile.php?id=61575510347312" "svg" "icons-facebook" "alt" "ReviByte on Facebook") }}
-				{{ partial "social-icon" (dict "link" "https://x.com/ByteCascade1" "svg" "icons-twitter" "alt" "ReviByte on X") }}
-				{{ partial "social-icon" (dict "link" "https://www.youtube.com/@ByteCascade1" "svg" "icons-vimeo" "alt" "ReviByte on YouTube") }} <!-- Use icons-youtube if available in theme; otherwise, swap vimeo icon file -->
-				{{ partial "social-icon" (dict "link" "https://pin.it/3wPZoxiRO" "svg" "icons-instagram" "alt" "ReviByte on Pinterest") }} <!-- Swap instagram icon to pinterest if available -->
+				{{ range .Site.Data.footer.social }}
+				{{ partial "social-icon" (dict "link" .link "svg" .svg "alt" .alt) }}
+				{{ end }}
 			</ul>
 		</div>
 
