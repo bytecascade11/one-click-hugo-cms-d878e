@@ -49,29 +49,49 @@ collections:
           - { label: "Logo URL", name: "logo_url", widget: "image", required: true }
           - { label: "Alt Text", name: "alt", widget: "string", required: true }
 
-  - name: "footer"
-    label: "Footer Settings"
-    files:
-      - name: "footer"
-        label: "Footer Config"
-        file: "data/footer.yml"
-        fields:
-          - { label: "Copyright Text", name: "copyright", widget: "string" }
-          - label: "Social Links"
-            name: "social"
-            widget: "list"
-            fields:
-              - { label: "Platform", name: "platform", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
+  - label: "Footer Settings"
+    name: "footer"
+    file: "data/footer.yml"
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - { label: "Main Title (e.g. ReviByte)", name: "title", widget: "string" }
+      - { label: "Blurb (description under title)", name: "blurb", widget: "text" }
 
-              - name: "newsletter"
-    label: "Newsletter Block"
-    files:
-      - name: "subscribe"
-        label: "Subscribe Settings"
-        file: "data/newsletter.yml"
+      - label: "ReviByte Links (left column)"
+        name: "revibyte_links"
+        widget: "list"
+        allow_add: true
         fields:
-          - { label: "Title", name: "title", widget: "string", default: "Newsletter subscribe" }
-          - { label: "Description", name: "description", widget: "markdown", default: "Get awesome news from us in your inbox every two weeks. Be the first to learn about new products." }
-          - { label: "Placeholder", name: "placeholder", widget: "string", default: "Your email" }
-          - { label: "Button Text", name: "button", widget: "string", default: "Submit" }
+          - { label: "Link Text", name: "title", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+
+      - label: "Find out more Links (middle column)"
+        name: "more_links"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "Link Text", name: "title", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+
+      - label: "Social Media Links (right column)"
+        name: "social"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "URL", name: "link", widget: "string" }
+          - { label: "SVG Icon Class (e.g. icons-facebook)", name: "svg", widget: "string" }
+          - { label: "Alt Text", name: "alt", widget: "string" }
+
+  - label: "Newsletter Block"
+    name: "newsletter"
+    file: "data/newsletter.yml"
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string", default: "Newsletter subscribe" }
+      - { label: "Description", name: "description", widget: "markdown", default: "Get awesome news from us in your inbox every two weeks. Be the first to learn about new products." }
+      - { label: "Placeholder", name: "placeholder", widget: "string", default: "Your email" }
+      - { label: "Button Text", name: "button", widget: "string", default: "Submit" }
