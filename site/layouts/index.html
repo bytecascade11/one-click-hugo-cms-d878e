@@ -1,13 +1,48 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+<main class="container mx-auto px-4 py-12 max-w-6xl">
+  <header class="text-center mb-12">
+    <h1 class="text-5xl font-bold mb-4">Latest Posts</h1>
+    <p class="text-xl text-gray-600">ByteCascade — Honest tech reviews and insights</p>
+  </header>
 
-{{ partial "short-text" .Params.blurb}}
+  <section class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    {{ range first 15 (where .Site.RegularPages "Section" "posts") }}
+    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      {{ if .Params.featured_image }}
+      <a href="{{ .Permalink }}">
+        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" class="w-full h-56 object-cover">
+      </a>
+      {{ end }}
 
-{{ partial "2-up" .Params }}
+      <div class="p-6">
+        <h2 class="text-2xl font-bold mb-2">
+          <a href="{{ .Permalink }}" class="hover:text-orange-600">{{ .Title }}</a>
+        </h2>
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+        <time class="text-sm text-gray-500 block mb-3">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
 
-{{ partial "blog" . }}
+        <p class="text-gray-700 mb-4">
+          {{ .Summary | truncate 220 "..." }}
+        </p>
+
+        <a href="{{ .Permalink }}" class="text-orange-600 font-semibold hover:underline">
+          Read more →
+        </a>
+      </div>
+    </article>
+    {{ end }}
+  </section>
+
+  {{ if gt (len (where .Site.RegularPages "Section" "posts")) 15 }}
+  <div class="text-center mt-12">
+    <a href="/posts/" class="inline-block bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-orange-700">
+      View All Posts
+    </a>
+  </div>
+  {{ end }}
+</main>
 
 {{ end }}
